@@ -1,7 +1,8 @@
 // setting up the express server
 const express=require('express')
 const app=express()
-const port=3000
+app.use(express.json())
+const port=9000
 // importing the DOTenv file
 require('dotenv').config()
 // importing and using the routes
@@ -18,6 +19,7 @@ const mongoose = require('mongoose');
 async function connectDB(){
     try{
     await mongoose.connect(process.env.URL)
+    console.log("connected")
     } catch(e){
         console.error(e)
     }

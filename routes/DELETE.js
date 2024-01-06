@@ -3,7 +3,7 @@ const router=express.Router()
 const Person=require("../models/user")
 
 
-router.delete('/:id',async (req,res)=>{
+router.delete('/delete/:id',async (req,res)=>{
     await Person.findByIdAndDelete(req.params.id)
     res.sendStatus(204);
 })
